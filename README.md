@@ -2,7 +2,7 @@
 
 This is not very useful. Its a concept.
 It is not easy to integrate OpenGL. 
-More likely: Vulkan.
+More likely: Vulkan(GpuInterop).
 
 # Warning
 
