@@ -4,10 +4,12 @@ This is not very useful. Its a concept.
 It is not easy to integrate OpenGL. 
 More likely: Vulkan(GpuInterop).
 
-# Warning
+<h2>Warning</h2>
 
 Never use this on real equipment.
 
-# Copyright
+<h2>Copyright</h2>
 
 AAgOpenGPS is a translation of Brian Tischler's [AgOpenGPS] (https://github.com/farmerbriantee/AgOpenGPS).
+
+<img source=
