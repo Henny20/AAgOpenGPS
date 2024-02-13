@@ -12,4 +12,5 @@ Never use this on real equipment.
 
 AAgOpenGPS is a translation of Brian Tischler's [AgOpenGPS] (https://github.com/farmerbriantee/AgOpenGPS).
 
-<img source="https://github.com/Henny20/AAgOpenGPS/blob/main/Images/MainWindow.png"/>
+<img src="https://github.com/Henny20/AAgOpenGPS/blob/main/Images/MainWindow.png" width=60%  />
+<br></br>
