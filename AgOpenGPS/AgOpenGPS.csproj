@@ -8,8 +8,6 @@
   
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
-      <AvaloniaResource Include="MainViews\**" />
-      <AvaloniaResource Include="ViewportViews\**" />
   </ItemGroup>
 
   <ItemGroup>
