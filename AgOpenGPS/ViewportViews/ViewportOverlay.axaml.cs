@@ -9,7 +9,7 @@ namespace AgOpenGPS.ViewportViews
         {
             InitializeComponent();
         }
-        
+        //only needed when using xaml files
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
