@@ -1,1 +1,33 @@
-
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AgOpenGPS.Views.MainView"
+             x:DataType="vm:MainViewModel"
+             xmlns:mv="clr-namespace:AgOpenGPS.MainViews"
+             xmlns:vv="clr-namespace:AgOpenGPS.ViewportViews"
+             Height="700" Width="1200">
+ <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+    <DockPanel LastChildFill="True">
+        <mv:HeaderBar DockPanel.Dock="Top"/>
+        <mv:LeftButtonStrip x:Name="leftButtonStrip"
+            DockPanel.Dock="Left" Width="100"/>
+        <mv:RightButtonStrip x:Name="rightButtonStrip"
+            DockPanel.Dock="Right"/>
+        <mv:BottomButtonStrip x:Name="bottomButtonStrip"
+            DockPanel.Dock="Bottom"/>
+        <Grid x:Name="viewportGrid">
+            <Grid x:Name="viewport" Background="Black"/>
+            <vv:ViewportOverlay/>
+        </Grid>
+    </DockPanel>
+             
+  
+  <!--TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/-->
+</UserControl>
