@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
 namespace AgOpenGPS.MainViews
 {
@@ -8,11 +7,7 @@ namespace AgOpenGPS.MainViews
         public LeftButtonStrip()
         {
             InitializeComponent();
-        }
-        
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+        }        
+
     }
 }
