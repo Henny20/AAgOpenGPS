@@ -7,14 +7,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450">
     <StackPanel x:Name="simulatorStakPanel"
         Orientation="Horizontal">
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
-        <Button Width="40" Height="30" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" IsVisible="{Binding ButtonVisible}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
+            <Button Width="40" Height="30" Background="{Binding ButtonColor}" />
     </StackPanel>
 
 </UserControl>
