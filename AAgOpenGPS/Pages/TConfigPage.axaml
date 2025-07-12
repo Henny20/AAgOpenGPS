@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.TConfigPage"
+             x:DataType="vm:MainViewModel">
+  <UserControl.Styles>
+    <StyleInclude Source="/Styles/GroupBox.axaml" />
+  </UserControl.Styles>
+  <ScrollViewer>
+    <StackPanel x:Name="cantabTConfig" TextElement.Foreground="Green">
+      <HeaderedContentControl x:Name="gboxAttachment" Header="Attachment Style" Background="Green">
+        <WrapPanel>
+          <Image Source="avares://AAgOpenGPS/Assets/ToolChkTBT.png" Height="152" Width="309"/>
+          <RadioButton x:Name="rbtnTBT"/>
+          <Image Source="avares://AAgOpenGPS/Assets/ToolChkRear.png" Height="152" Width="309"/>
+          <RadioButton x:Name="rbtnFixedRear"/>
+          <Image Source="avares://AAgOpenGPS/Assets/ToolChkFront.png" Height="152" Width="309"/>
+          <RadioButton x:Name="rbtnFront"/>
+          <Image Source="avares://AAgOpenGPS/Assets/ToolChkTrailing.png" Height="152" Width="309"/>
+          <RadioButton x:Name="rbtnTrailing"/>
+        </WrapPanel>
+      </HeaderedContentControl>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

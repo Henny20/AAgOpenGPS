@@ -1,0 +1,34 @@
+<UserControl
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             xmlns:local="using:AAgOpenGPS.Pages"
+             x:Class="AAgOpenGPS.Pages.NVSamplePage1"
+             x:DataType="vm:MainViewModel">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="90"/>
+    </Grid.RowDefinitions>
+    <Border Grid.Row="0" BorderBrush="White" BorderThickness="2">
+      <local:EmbedGL/>
+    </Border>
+    <StackPanel Orientation="Horizontal" Grid.Row="1">
+      <Button Classes="accent" Height="80" Width="80">
+        <Image Source="avares://AAgOpenGPS/Assets/FieldClose3.png" Width="50" Height="50"/>
+      </Button>
+      <Button Content="Button" Background="{DynamicResource SystemAccentColor}" Height="80" Width="80"/>
+      <Button Content="Button" Classes="accent" Height="80" Width="80"/>
+      <Button Content="Button" Classes="accent" Height="80" Width="80"/>
+      <Button Content="Button" Height="80" Width="80"/>
+      <Button Content="Button" Classes="accent" Height="80" Width="80"/>
+      <Button Content="AutoSteer" IsEnabled="False" Height="80" Width="80" Command="{Binding AutoSteerCommand}"/>
+      <ToggleButton Content="Toggle" Height="80" Width="80" />
+    </StackPanel>
+  </Grid>
+</UserControl>

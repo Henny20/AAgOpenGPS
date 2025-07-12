@@ -1,0 +1,94 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.VTypePage"
+             x:DataType="vm:MainViewModel">
+  <UserControl.Styles>
+    <StyleInclude Source="/Styles/GroupBox.axaml" />
+  </UserControl.Styles>
+  <ScrollViewer>
+    <StackPanel>
+      <Panel TextElement.Foreground="Green">
+        <HeaderedContentControl x:Name="groupBox1" Header="" Background="Green">
+          <WrapPanel>
+            <Image Source="avares://AAgOpenGPS/Assets/vehiclePageArticulated.png" Height="200" Width="200"/>
+            <RadioButton x:Name="rbtn4WD"  IsChecked="{Binding FourWDIsChecked, Mode=TwoWay}" GroupName="Type" VerticalAlignment="Bottom"/>
+            <Image Source="avares://AAgOpenGPS/Assets/vehiclePageTractor.png" Height="200" Width="200"/>
+            <RadioButton x:Name="rbtnTractor" IsChecked="{Binding TractorIsChecked, Mode=TwoWay}" GroupName="Type" VerticalAlignment="Bottom"/>
+            <Image Source="avares://AAgOpenGPS/Assets/vehiclePageHarvester.png" Height="200" Width="200"/>
+            <RadioButton x:Name="rbtnHarvester" IsChecked="{Binding HarvesterIsChecked, Mode=TwoWay}" GroupName="Type" VerticalAlignment="Bottom"/>
+          </WrapPanel>
+        </HeaderedContentControl>
+      </Panel>
+
+      <StackPanel x:Name="cantabVBrand">
+        <TextBlock x:Name="labelTractorBrand">
+          Tractor brand
+        </TextBlock>
+        <WrapPanel x:Name="panelTractorBrands">
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/AoG.png" Height="50" Width="50"/>
+          <RadioButton x:Name="rbtnBrandTAoG"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Case.png" Height="50" Width="50"/>
+          <RadioButton x:Name="rbtnBrandTCase"/>
+          <TextBlock Text="  "/>
+          <Image Margin ="30" Source="avares://AAgOpenGPS/Assets/Config/Brand/Claas.png" Height="50" Width="50"/>
+          <RadioButton x:Name="rbtnBrandTClaas"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Deutz.png" Height="50" Width="50"/>
+          <RadioButton x:Name="rbtnBrandTDeutz"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Fendt.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTFendt"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/JohnDeere.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTJDeere"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Kubota.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTKubota"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Massey.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTMassey"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/NewHolland.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTNH"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Same.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTSame"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Steyr.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTSteyr"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Valtra.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTValtra"/>
+          <TextBlock Text="  "/>
+          <Image Source="avares://AAgOpenGPS/Assets/Config/Brand/Ursus.png" Height="60" Width="60"/>
+          <RadioButton x:Name="rbtnBrandTUrsus"/>
+        </WrapPanel>
+        <!--TextBlock x:Name="label4WDBrand">
+                            4WD brand
+                        </TextBlock>
+            <StackPanel x:Name="panel4WdBrands">
+              <RadioButton x:Name="rbtnBrand4WDAoG"/>
+              <RadioButton x:Name="rbtnBrand4WDChallenger"/>
+              <RadioButton x:Name="rbtnBrand4WDCase"/>
+              <RadioButton x:Name="rbtnBrand4WDNH"/>
+              <RadioButton x:Name="rbtnBrand4WDJDeere"/>
+            </StackPanel>
+            <TextBlock x:Name="labelHarvesterBrand">
+                            Harvester brand
+                        </TextBlock>
+            <StackPanel x:Name="panelHarvesterBrands">
+              <RadioButton x:Name="rbtnBrandHAoG"/>
+              <RadioButton x:Name="rbtnBrandHCase"/>
+              <RadioButton x:Name="rbtnBrandHClaas"/>
+              <RadioButton x:Name="rbtnBrandHJDeere"/>
+              <RadioButton x:Name="rbtnBrandHNH"/>
+            </StackPanel-->
+        </StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+  </UserControl>

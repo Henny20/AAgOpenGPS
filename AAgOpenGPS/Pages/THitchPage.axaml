@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.THitchPage">
+  <ScrollViewer>
+    <StackPanel x:Name="cantabTHitch" Background="WhiteSmoke">
+      <WrapPanel Margin="10">
+        <NumericUpDown x:Name="nudTankHitch" Value="0" Height="25" Width="144" Margin="40 0"/>
+        <NumericUpDown x:Name="nudTrailingHitchLength" Value="0" Height="25" Width="144" Margin="20 0"/>
+        <NumericUpDown x:Name="nudDrawbarLength" Value="0" Height="25" Width="144"/>
+      </WrapPanel>
+      <Panel HorizontalAlignment="Left" Margin="10 0">
+      <Rectangle Height="250" Width="450" Fill="LightGray" ></Rectangle>
+        <Image  x:Name="picboxToolHitch" Margin="20" Height="200" Width="400"
+               Stretch="UniformToFill"
+               Source="avares://AAgOpenGPS/Assets/ToolHitchPageTBT.png"/>
+      </Panel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

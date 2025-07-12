@@ -1,0 +1,146 @@
+using Avalonia.Platform;
+using Avalonia.Android;
+using Android.Views;
+using Android.Content;
+using Android.Util;
+using Android.Opengl;
+using Android.App;
+using Graph = Android.Graphics;
+
+using Java.Nio;
+
+namespace AAgOpenGPS.Android;
+
+
+public class Line {
+    private FloatBuffer VertexBuffer;
+
+    private string VertexShaderCode =
+        // This matrix member variable provides a hook to manipulate
+        // the coordinates of the objects that use this vertex shader
+        "uniform mat4 uMVPMatrix;" +
+
+        "attribute vec4 vPosition;" +
+        "void main() {" +
+        // the matrix must be included as a modifier of gl_Position
+        "  gl_Position = uMVPMatrix * vPosition;" +
+        "}";
+
+    private string FragmentShaderCode =
+        "precision mediump float;" +
+        "uniform vec4 vColor;" +
+        "void main() {" +
+        "  gl_FragColor = vColor;" +
+        "}";
+    
+    protected int GlProgram;
+    protected int PositionHandle;
+    protected int ColorHandle;
+    protected int MVPMatrixHandle;
+
+    // number of coordinates per vertex in this array
+    static int COORDS_PER_VERTEX = 3;
+    static float[] LineCoords = new float[] {
+        0.0f, 0.0f, 0.0f,
+        1.0f, 0.0f, 0.0f,
+    };
+
+    private int VertexCount = LineCoords.Length / COORDS_PER_VERTEX;
+    private int VertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
+
+    // Set color with red, green, blue and alpha (opacity) values
+    float[] color = new float[] { 0.0f, 0.0f, 0.0f, 1.0f };
+
+    public Line() {
+        // initialize vertex byte buffer for shape coordinates
+        ByteBuffer bb = ByteBuffer.AllocateDirect(
+            // (number of coordinate values * 4 bytes per float)
+            LineCoords.Length * 4);
+        // use the device hardware's native byte order
+        bb.Order(ByteOrder.NativeOrder());
+
+        // create a floating point buffer from the ByteBuffer
+        VertexBuffer = bb.AsFloatBuffer();
+        // add the coordinates to the FloatBuffer
+        VertexBuffer.Put(LineCoords);
+        // set the buffer to read the first coordinate
+        VertexBuffer.Position(0);
+    
+        int vertexShader = LoadShader(GLES20.GlVertexShader, VertexShaderCode);
+        int fragmentShader = LoadShader(GLES20.GlFragmentShader, FragmentShaderCode);
+
+        GlProgram = GLES20.GlCreateProgram();             // create empty OpenGL ES Program
+        GLES20.GlAttachShader(GlProgram, vertexShader);   // add the vertex shader to program
+        GLES20.GlAttachShader(GlProgram, fragmentShader); // add the fragment shader to program
+        GLES20.GlLinkProgram(GlProgram);                  // creates OpenGL ES program executables
+    }
+
+    public void SetVerts(float v0, float v1, float v2, float v3, float v4, float v5) {
+        LineCoords[0] = v0;
+        LineCoords[1] = v1;
+        LineCoords[2] = v2;
+        LineCoords[3] = v3;
+        LineCoords[4] = v4;
+        LineCoords[5] = v5;
+    
+        VertexBuffer.Put(LineCoords);
+        // set the buffer to read the first coordinate
+        VertexBuffer.Position(0);
+    }
+
+    public void SetColor(float red, float green, float blue, float alpha) {
+        color[0] = red;
+        color[1] = green;
+        color[2] = blue;
+        color[3] = alpha;
+    }
+
+    public void Draw(float[] mvpMatrix) {
+        // Add program to OpenGL ES environment
+        GLES20.GlUseProgram(GlProgram);
+
+        // get handle to vertex shader's vPosition member
+        PositionHandle = GLES20.GlGetAttribLocation(GlProgram, "vPosition");
+
+        // Enable a handle to the triangle vertices
+        GLES20.GlEnableVertexAttribArray(PositionHandle);
+
+        // Prepare the triangle coordinate data
+        GLES20.GlVertexAttribPointer(PositionHandle, COORDS_PER_VERTEX,
+                                 GLES20.GlFloat, false,
+                                 VertexStride, VertexBuffer);
+
+        // get handle to fragment shader's vColor member
+        ColorHandle = GLES20.GlGetUniformLocation(GlProgram, "vColor");
+
+        // Set color for drawing the triangle
+        GLES20.GlUniform4fv(ColorHandle, 1, color, 0);
+    
+        // get handle to shape's transformation matrix
+        MVPMatrixHandle = GLES20.GlGetUniformLocation(GlProgram, "uMVPMatrix");
+        //ArRenderer.checkGlError("glGetUniformLocation");
+
+        // Apply the projection and view transformation
+        GLES20.GlUniformMatrix4fv(MVPMatrixHandle, 1, false, mvpMatrix, 0);
+       // ArRenderer.checkGlError("glUniformMatrix4fv");
+
+        // Draw the triangle
+        GLES20.GlDrawArrays(GLES20.GlLines, 0, VertexCount);
+
+        // Disable vertex array
+        GLES20.GlDisableVertexAttribArray(PositionHandle);
+    }
+    
+     public static int LoadShader(int type, string shaderCode)
+    {
+        // create a vertex shader type (GLES20.Gl_VERTEX_SHADER)
+        // or a fragment shader type (GLES20.Gl_FRAGMENT_SHADER)
+        int shader = GLES20.GlCreateShader(type);
+
+        // add the source code to the shader and compile it
+        GLES20.GlShaderSource(shader, shaderCode);
+        GLES20.GlCompileShader(shader);
+
+        return shader;
+    }
+ }

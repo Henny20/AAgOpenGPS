@@ -1,0 +1,127 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.TSectionsPage">
+    <ScrollViewer>
+         <StackPanel x:Name="cantabTSections">
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <StackPanel>
+                <TextBlock x:Name="label37" Text="9" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection9" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label38" Text="10" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection10" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label39" Text="11" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection11" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label40" Text="12" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection12" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <StackPanel>
+                <TextBlock x:Name="label30" Text="13" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection13" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label19" Text="14" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection14" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label4" Text="15" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection15" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label1" Text="16" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection16" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <StackPanel>
+                <TextBlock x:Name="label48" Text="1" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection1" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label34" Text="2" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection2" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label35" Text="3" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection3" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label46" Text="4" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection4" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <StackPanel>
+                <TextBlock x:Name="label47" Text="5" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection5" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label32" Text="6" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection6" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label45" Text="7" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection7" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label41" Text="8" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudSection8" Height="25" Width="144" Value="200"/>
+              </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <Image x:Name="pictureBox12" Source="avares://AAgOpenGPS/Assets/SectionWidth.png" Width="200" Height="123"/>
+              <StackPanel>
+                <TextBlock x:Name="label49" Text="Section Width" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudDefaultSectionWidth" Height="25" Width="144"/>
+              </StackPanel>
+              <StackPanel>
+                <TextBlock x:Name="label51" Text="# Of Sections"/>
+                <ComboBox x:Name="cboxNumSections">
+                  <!-- SelectionChanged="cboxNumSections_SelectedIndexChanged"-->
+                  <ComboBoxItem>1</ComboBoxItem>
+                  <ComboBoxItem>2</ComboBoxItem>
+                  <ComboBoxItem>3</ComboBoxItem>
+                  <ComboBoxItem>4</ComboBoxItem>
+                  <ComboBoxItem>5</ComboBoxItem>
+                  <ComboBoxItem>6</ComboBoxItem>
+                  <ComboBoxItem>7</ComboBoxItem>
+                  <ComboBoxItem>8</ComboBoxItem>
+                  <ComboBoxItem>9</ComboBoxItem>
+                  <ComboBoxItem>10</ComboBoxItem>
+                  <ComboBoxItem>11</ComboBoxItem>
+                  <ComboBoxItem>12</ComboBoxItem>
+                  <ComboBoxItem>13</ComboBoxItem>
+                  <ComboBoxItem>14</ComboBoxItem>
+                  <ComboBoxItem>15</ComboBoxItem>
+                  <ComboBoxItem>16</ComboBoxItem>
+                </ComboBox>
+              </StackPanel>
+              <TextBlock x:Name="lblVehicleToolWidth" Text="II" Margin="0 20"/>
+              <Image Source="avares://AAgOpenGPS/Assets/SectionsExample.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+              <Image x:Name="pictureBox11" Source="avares://AAgOpenGPS/Assets/SectionOffBelow.png"/>
+              <NumericUpDown x:Name="nudCutoffSpeed" Height="25" Width="144"/>
+              <StackPanel>
+                <TextBlock x:Name="label50" Text="% Coverage" HorizontalAlignment="Center"/>
+                <NumericUpDown x:Name="nudMinCoverage" Height="25" Width="144"/>
+                <TextBlock x:Name="lblTurnOffBelowUnits" Text="Km/H"/>
+              </StackPanel>
+            </StackPanel>
+            <TextBlock x:Name="label106">
+                            Update Response
+                        </TextBlock>
+            <CheckBox x:Name="cboxSectionResponse"/>
+          </StackPanel>
+     </ScrollViewer>
+</UserControl>

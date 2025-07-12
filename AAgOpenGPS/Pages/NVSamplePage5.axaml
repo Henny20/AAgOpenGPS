@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             xmlns:corevm="clr-namespace:AgOpenGPS.Core.ViewModels;assembly=AgOpenGPS.Core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:AAgOpenGPS.Field.StartNewField"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.NVSamplePage5"
+             x:DataType="vm:MainViewModel">
+    <Border>
+      <ScrollViewer>
+        <StackPanel>
+          <DataGrid Margin="20" ItemsSource="{Binding Fields}"
+                    IsReadOnly="False"
+                    CanUserReorderColumns="True"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    GridLinesVisibility="All"
+                    BorderThickness="1" BorderBrush="Gray">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Name"  Binding="{Binding FieldName}"/>
+              <DataGridTextColumn Header="Area" Binding="{Binding FieldArea}" />
+              <DataGridTextColumn Header="Distance" Binding="{Binding FieldDistance}" />
+            </DataGrid.Columns>
+          </DataGrid>
+          <StackPanel Orientation="Horizontal" Spacing="10" Margin="10">
+            <TextBox Text="{Binding AddField, Mode=TwoWay}" Height="20" Width="200"/>
+            <Button Classes="accent"
+                    Content="+ Date"
+                    Command="{Binding AddDateCommand}"/>
+            <Button Classes="accent"
+                    Content="+ Time"
+                    Command="{Binding AddTimeCommand}"/>
+            <Button Classes="accent" Content="New Field" Margin="5" Command="{Binding NewFieldCommand}"/>
+          </StackPanel>
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+  </UserControl>

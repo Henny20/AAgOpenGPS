@@ -1,0 +1,67 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+  mc:Ignorable="d"
+  d:DesignWidth="800"
+  d:DesignHeight="450"
+  x:Class="AAgOpenGPS.Pages.DRollPage"
+  x:DataType="vm:MainViewModel">
+  <ScrollViewer>
+    <StackPanel x:Name="cantabDRoll" Background="WhiteSmoke">
+      <WrapPanel>
+        <Panel Width="300" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top">
+          <Button x:Name="btnResetIMU" Width="130" Height="95" Margin="0 20" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding ResetIMUCommand}">
+            <Image Source="avares://AAgOpenGPS/Assets/Config/ConDa_ResetIMU.png"/>
+          </Button>
+          <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <TextBlock x:Name="label77">
+              Zero Roll
+            </TextBlock>
+            <Button x:Name="btnZeroRoll" Width="130" Height="95" Command="{Binding ZeroRollCommand}">
+              <Image Source="avares://AAgOpenGPS/Assets/Config/ConDa_RollSetZero.png"/>
+            </Button>
+          </StackPanel>
+          <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock x:Name="label76">
+              Remove Offset
+            </TextBlock>
+            <Button x:Name="btnRemoveZeroOffset" Width="130" Height="95" Command="{Binding RemoveZeroOffsetCommand}">
+              <Image Source="avares://AAgOpenGPS/Assets/Config/ConDa_RemoveOffset.png"/>
+            </Button>
+          </StackPanel>
+          <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <TextBlock x:Name="label78">
+              Invert Roll
+            </TextBlock>
+            <ToggleButton x:Name="cboxDataInvertRoll" Width="130" Height="95">
+              <Image Source="avares://AAgOpenGPS/Assets/Config/ConDa_InvertRoll.png"/>
+            </ToggleButton>
+          </StackPanel>
+        </Panel>
+        <Image x:Name="pictureBox9" Source="avares://AAgOpenGPS/Assets/Config/ConD_RollHelper.png" Width="154" Height="217" Margin="10 0" VerticalAlignment="Bottom"/>
+      </WrapPanel>
+      <WrapPanel Margin="20" HorizontalAlignment="Center">
+        <TextBlock x:Name="label24" Margin="30 0">
+          Less
+        </TextBlock>
+        <TextBlock x:Name="label18" Margin="30 0">
+          Roll Filter
+        </TextBlock>
+        <TextBlock x:Name="label26" Margin="30 0">
+          More
+        </TextBlock>
+      </WrapPanel>
+      <Slider x:Name="hsbarRollFilter" Width="200"/>
+      <TextBlock x:Name="lblRollZeroOffset">
+        label11
+      </TextBlock>
+
+      <TextBlock x:Name="lblRollFilterPercent">
+        65%
+      </TextBlock>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

@@ -1,0 +1,120 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+  mc:Ignorable="d"
+  d:DesignWidth="800"
+  d:DesignHeight="450"
+  x:Class="AAgOpenGPS.Pages.PageSettings"
+  x:DataType="vm:MainViewModel">
+  <Grid Background="{DynamicResource ApplicationPageBackgroundThemeBrush}">
+    <!-- ShowGridLines="True"-->
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <StackPanel Margin="20" Grid.Row="0" Grid.Column="0">
+      <NumericUpDown Name="nudMenusOnTime" IsVisible="False"/>
+      <TextBlock Name="chkSky">
+        Sky
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Sky.png" Height="100"/>
+      <CheckBox Name="chkDisplaySky"/>
+      </StackPanel >
+       <StackPanel Margin="20" Grid.Row="1" Grid.Column="0">
+      <TextBlock Name="chkGrid">
+        Grid
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Grid.png" Height="100"/>
+      <CheckBox Name="chkDisplayGrid" IsChecked="True"/>
+       </StackPanel>
+        <StackPanel Margin="20" Grid.Row="2" Grid.Column="0">
+      <TextBlock Name="chkSpeedo">
+        Speedo
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Speedometer.png" Height="100"/>
+      <CheckBox Name="chkDisplaySpeedo"/>
+    </StackPanel>
+    <StackPanel Margin="20" Grid.Row="0" Grid.Column="1">
+      <TextBlock Name="label27">
+        Auto Day Night
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_AutoDayNight.png"/>
+      <CheckBox Name="chkDisplayDayNight" IsChecked="True"/>
+        </StackPanel>
+       <StackPanel Margin="20" Grid.Row="1" Grid.Column="1">
+      <TextBlock Name="label28">
+        Start Fullscreen
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_FullScreenBegin.png" Height="100"/>
+      <CheckBox Name="chkDisplayStartFullScreen" IsChecked="True"/>
+        </StackPanel>
+       <StackPanel Margin="20" Grid.Row="2" Grid.Column="1">
+      <TextBlock Name="chkExtraGuides">
+        Guidelines
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_ExtraGuides.png" Height="100"/>
+      <CheckBox Name="chkDisplayExtraGuides"/>
+    </StackPanel>
+    <StackPanel Margin="20" Grid.Row="0" Grid.Column="2">
+      <TextBlock Name="label31">
+        Lightbar
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_LightBar.png" Height="100"/>
+      <CheckBox Name="chkDisplayLightbar"/>
+        </StackPanel>
+       <StackPanel Margin="20" Grid.Row="1" Grid.Column="2">
+      <TextBlock Name="label33">
+        Keyboard
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_KeyBoard.png" Height="100"/>
+      <CheckBox Name="chkDisplayKeyboard"/>
+        </StackPanel>
+       <StackPanel Margin="20" Grid.Row="2" Grid.Column="2">
+      <TextBlock Name="label101">
+        Field Texture
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_FloorTexture.png" Height="100"/>
+      <CheckBox Name="chkDisplayFloor"/>
+    </StackPanel>
+    <StackPanel Margin="20" Grid.Row="0" Grid.Column="3">
+      <TextBlock Name="label43">
+        Polygons
+      </TextBlock>
+      <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Poligons.png" Height="100"/>
+      <CheckBox Name="chkDisplayPolygons"/>
+       </StackPanel>
+    <StackPanel Margin="20" Grid.Row="1" Grid.Column="3">
+      <!--TextBlock Name="label36">
+        LogNMEA
+      </TextBlock-->
+      <!--Image Source="avares://AAgOpenGPS/Assets/Config/ConD_LogNMEA.png"/-->
+      <!--CheckBox Name="chkDisplayLogNMEA"/-->
+       <ToggleSwitch HorizontalContentAlignment="Left"
+                      Content="LogNMEA?"
+                      OffContent="Uit"
+                      OnContent="Aan"
+                      VerticalAlignment="Bottom" />
+    </StackPanel>
+
+    <Border Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" Margin="20" BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4">
+      <StackPanel>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Metric.png"/>
+        <RadioButton Name="rbtnDisplayImperial" IsChecked="{Binding DisplayImperial}"/>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConD_Imperial.png"/>
+        <RadioButton Name="rbtnDisplayMetric" IsChecked="{Binding DisplayMetric}"/>
+      </StackPanel>
+    </Border>
+
+  </Grid>
+</UserControl>

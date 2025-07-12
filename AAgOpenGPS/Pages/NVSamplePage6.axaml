@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:spg="using:AAgOpenGPS.Pages"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.NVSamplePage6"
+             x:DataType="vm:MainViewModel">
+  <Border>
+    <ScrollViewer>
+      <StackPanel>
+        <ui:TabView Name="TabView" TabWidthMode="Equal" CloseButtonOverlayMode="Always" TabStripHeader="" TabStripFooter="" CanReorderTabs="False">
+          <ui:TabViewItem Header="Style" IconSource="Document">
+            <spg:SConfigPage/>
+          </ui:TabViewItem>
+          <ui:TabViewItem Header="Hitch" IconSource="Document">
+            <spg:SGainPage/>
+          </ui:TabViewItem>
+          <ui:TabViewItem Header="Sections" IconSource="Star">
+            <spg:SStanPage/>
+          </ui:TabViewItem>
+          <ui:TabViewItem Header="Sections" IconSource="Star">
+            <spg:SIntPage/>
+          </ui:TabViewItem>
+        </ui:TabView>
+
+      </StackPanel>
+
+    </ScrollViewer>
+  </Border>
+</UserControl>

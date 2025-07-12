@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.VGuidancePage"
+             x:DataType="vm:MainViewModel">
+  <ScrollViewer>
+    <Grid Name="cantabVGuidance" ColumnDefinitions="300,300" RowDefinitions="*,*,*">
+      <Panel Grid.Row="0" Grid.Column="0" Margin="10">
+        <TextBlock Name="label112" Text="LightBar - Distance per Pixel" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConV_CmPixel.png" Height="60" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <NumericUpDown Name="nudLightbarCmPerPixel" Value="{Binding LightbarCmPerPixel}" Height="25" Width="144" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+          <TextBlock Name="label20">
+            cm
+          </TextBlock>
+          <TextBlock Name="label17">
+            / pixel
+          </TextBlock>
+        </WrapPanel>
+      </Panel>
+      <Panel Grid.Row="1" Grid.Column="0" Margin="10">
+        <TextBlock Name="label111" Text="AB Line Length" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConV_ABLineLength.png" Height="60" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <NumericUpDown Name="nudABLength" Value="{Binding ABLength}" Height="25" Width="144" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBlock Name="label79" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+          (m)
+        </TextBlock>
+      </Panel>
+      <Panel Grid.Row="0" Grid.Column="1" Margin="10">
+        <TextBlock Name="label110" Text="Line Width" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConV_LineWith.png" Height="60" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <NumericUpDown Name="nudLineWidth" Value="{Binding LineWidth}" Height="25" Width="144" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBlock Name="label21" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+          pixels
+        </TextBlock>
+      </Panel>
+      <Panel Grid.Row="1" Grid.Column="1" Margin="10">
+        <TextBlock Name="label109" VerticalAlignment="Top" HorizontalAlignment="Left">
+          Nudge Distance
+        </TextBlock>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConV_SnapDistance.png" Height="60" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <NumericUpDown Name="nudSnapDistance" Value="{Binding Snapdistance}" Height="25" Width="144" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBlock Name="label102" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+          cm
+        </TextBlock>
+      </Panel>
+      <Panel Grid.Row="2" Grid.Column="1" Margin="10">
+        <TextBlock Name="label108" VerticalAlignment="Top" HorizontalAlignment="Left">
+          Line Acquire Look Ahead
+        </TextBlock>
+        <Image Source="avares://AAgOpenGPS/Assets/Config/ConV_GuidanceLookAhead.png" Height="60" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <NumericUpDown Name="nudGuidanceLookAhead" Value="{Binding GuidanceLookAhead}" Height="25" Width="144" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock Name="label107" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+          Seconds
+        </TextBlock>
+      </Panel>
+      <TextBlock Name="label55" Grid.Row="2" Grid.Column="0" Text="Constant Contour&#13;&#10;Recording"/>
+      <TextBlock Name="label113" Grid.Row="2" Grid.Column="0" Text="Steer Switch Control" Margin="110 20"/>
+      <WrapPanel Grid.Row="2" Grid.Column="0" Margin="0 40">
+        <ToggleButton Name="cboxConstantContour">
+          <Image Source="avares://AAgOpenGPS/Assets/ContourOn.png" Height="60" Width="80"/>
+        </ToggleButton>
+        <ToggleButton Name="cboxAutoSteerAuto" Content="Manual" Margin="30 0">
+          <Image Name="cboxAutoSteerAutoImg" Height="60" Width="80"/>
+        </ToggleButton>
+      </WrapPanel>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

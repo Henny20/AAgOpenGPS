@@ -1,0 +1,126 @@
+<UserControl
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.DHeadingPage"
+             x:DataType="vm:MainViewModel">
+  <UserControl.Styles>
+    <StyleInclude Source="/Styles/GroupBox.axaml"/>
+  </UserControl.Styles>
+  <ScrollViewer>
+    <Grid x:Name="cantabDHeading" Background="WhiteSmoke" ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto" Margin="4">
+      <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+        <WrapPanel>
+          <TextBlock x:Name="label12">
+            Dual Heading Offset (Degree)
+          </TextBlock>
+          <NumericUpDown x:Name="nudDualHeadingOffset" Width="144"/>
+        </WrapPanel>
+        <WrapPanel Margin="0 20">
+          <StackPanel>
+          <TextBlock x:Name="label104" Text="Minimum Frame&#x0a;Pause (msec)"></TextBlock>
+            <NumericUpDown x:Name="nudMinimumFrameTime" Width="144"/>
+          </StackPanel>
+          <TextBlock Text="  "/>
+          <StackPanel>
+          <TextBlock x:Name="label2" Text="Differential Age&#x0a;Alarm (secs)"></TextBlock>
+            <NumericUpDown x:Name="nudAgeAlarm" Width="144"/>
+          </StackPanel>
+        </WrapPanel>
+        <WrapPanel>
+          <ToggleButton x:Name="cboxIsRTK">
+            RTK Alarm
+          </ToggleButton>
+          <TextBlock x:Name="label118">
+            -&gt;
+          </TextBlock>
+          <ToggleButton x:Name="cboxIsRTK_KillAutoSteer">
+            Kill Auto Steer
+          </ToggleButton>
+        </WrapPanel>
+      </StackPanel>
+      <HeaderedContentControl x:Name="gboxSingle" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Header="Single Antenna Settings" Background="Gray">
+        <StackPanel>
+          <WrapPanel Margin="10">
+            <StackPanel>
+              <TextBlock/>
+              <TextBlock x:Name="label9" Text="Start Speed (kmh)"/>
+              <NumericUpDown x:Name="nudStartSpeed" Width="144"/>
+            </StackPanel>
+            <TextBlock Text="  "/>
+            <StackPanel>
+              <TextBlock x:Name="label15" Text="Fix Trigger"/>
+              <TextBlock x:Name="label8" Text="Distance (m)"/>
+              <NumericUpDown x:Name="nudMinFixStepDistance" Width="144"/>
+            </StackPanel>
+          </WrapPanel>
+          <WrapPanel Margin="10">
+            <StackPanel>
+              <TextBlock x:Name="label6">
+                Forward
+              </TextBlock>
+              <NumericUpDown x:Name="nudForwardComp" Width="144"/>
+            </StackPanel>
+            <TextBlock Text="  "/>
+            <StackPanel>
+              <TextBlock x:Name="label116">
+                Reverse
+              </TextBlock>
+              <NumericUpDown x:Name="nudReverseComp" Width="144"/>
+            </StackPanel>
+          </WrapPanel>
+          <TextBlock x:Name="label117" HorizontalAlignment="Center">
+            IMU/GPS Turn Compensation
+          </TextBlock>
+          <WrapPanel Margin="20">
+            <ToggleButton x:Name="cboxIsDualAsIMU">
+              Dual As IMU
+            </ToggleButton>
+            <ToggleButton x:Name="cboxIsReverseOn">
+              Reverse Detection
+            </ToggleButton>
+          </WrapPanel>
+          <WrapPanel Margin="20" HorizontalAlignment="Center">
+            <TextBlock x:Name="lblIMU" Foreground="Green" Margin="30 0">
+              IMU &lt;
+            </TextBlock>
+          <TextBlock x:Name="lblIMUFusion" Text="IMU GPS&#x0a;Fusion"></TextBlock>
+            <TextBlock x:Name="lblGPS" Foreground="Red" Margin="30 0">
+              &gt; GPS
+            </TextBlock>
+          </WrapPanel>
+          <WrapPanel HorizontalAlignment="Center">
+            <TextBlock x:Name="lblFusionIMU" FontWeight="Bold">
+              -888
+            </TextBlock>
+            <Slider x:Name="hsbarFusion" Width="200"/>
+            <TextBlock x:Name="lblFusion" FontWeight="Bold">
+              -888
+            </TextBlock>
+          </WrapPanel>
+        </StackPanel>
+        </HeaderedContentControl>
+            <HeaderedContentControl x:Name="headingGroupBox" Header="Antenna Heading Type" Grid.Row="0" Grid.Column="0" Margin="20 0" Background="Gray">
+            <Panel>
+              <StackPanel Margin="10">
+                <RadioButton x:Name="rbtnHeadingHDT">
+                  Dual
+                </RadioButton>
+                <RadioButton x:Name="rbtnHeadingGPS">
+                  VTG
+                </RadioButton>
+                <RadioButton x:Name="rbtnHeadingFix">
+                  Fix
+                </RadioButton>
+              </StackPanel>
+              <Image Source="avares://AAgOpenGPS/Assets/Config/Con_SourcesGPS.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Panel>
+          </HeaderedContentControl>
+        </Grid>
+      </ScrollViewer>
+    </UserControl>

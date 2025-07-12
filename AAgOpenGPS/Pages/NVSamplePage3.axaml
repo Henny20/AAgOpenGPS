@@ -1,0 +1,29 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:spg="using:AAgOpenGPS.Pages"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.NVSamplePage3">
+       <StackPanel>
+  <ui:TabView Name="APIInActionTabView" TabWidthMode="Equal" CloseButtonOverlayMode="Always" TabStripHeader="" TabStripFooter="" CanReorderTabs="False">
+    <ui:TabViewItem Header="Style" IconSource="Document">
+      <spg:TConfigPage/>
+    </ui:TabViewItem>
+    <ui:TabViewItem Header="Hitch" IconSource="Document">
+      <spg:THitchPage/>
+    </ui:TabViewItem>
+    <ui:TabViewItem Header="Sections" IconSource="Vehicle_Car">
+      <spg:TSectionsPage/>
+    </ui:TabViewItem>
+     <ui:TabViewItem Header="Switches" IconSource="Vehicle_Car">
+      <spg:TSwitchesPage/>
+    </ui:TabViewItem>
+     <ui:TabViewItem Header="Settings" IconSource="Vehicle_Car">
+      <spg:TSettingsPage/>
+    </ui:TabViewItem>
+  </ui:TabView>
+  <Button Content="Save" Classes="accent" Height="80" Width="80" Margin= "10 10"/>
+  </StackPanel>
+</UserControl>

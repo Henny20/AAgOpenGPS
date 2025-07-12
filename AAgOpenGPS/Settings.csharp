@@ -1,0 +1,14 @@
+namespace test;
+
+public class Settings
+{
+    public Setting Setting { get; set; }
+}
+
+public class Setting
+{     
+      public string Name { get; set; } = "";
+      public string Type { get; set; } = "";
+      public string Scope { get; set; } = "";
+      public object Value { get; set; } = "";
+}   

@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.VDimensionsPage">
+  <ScrollViewer>
+
+    <StackPanel x:Name="cantabVDimensions" Spacing="10">
+      <Image x:Name="pictureBox1" Source="avares://AAgOpenGPS/Assets/RadiusWheelBase.png" Height="415" Width="469"/>
+      <WrapPanel>
+        <TextBlock x:Name="label53" Text="Track"/>
+        <NumericUpDown Value="190" Increment="1" x:Name="nudVehicleTrack" Margin="40 0" Height="25" Width="144"/>
+      </WrapPanel>
+      <WrapPanel>
+        <TextBlock x:Name="label44" Text="Wheelbase"/>
+        <NumericUpDown Value="280" Increment="1" x:Name="nudWheelbase" Height="25" Width="144"/>
+      </WrapPanel>
+      <WrapPanel>
+        <TextBlock x:Name="label60" Text="Turn Radius"/>
+        <NumericUpDown Value="390" Increment="1" x:Name="nudMinTurnRadius" Height="25" Width="144"/>
+      </WrapPanel>
+    </StackPanel>
+
+  </ScrollViewer>
+</UserControl>

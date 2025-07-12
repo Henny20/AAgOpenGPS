@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.TSwitchesPage"
+             x:DataType="vm:MainViewModel">
+  <UserControl.Styles>
+    <StyleInclude Source="/Styles/GroupBox.axaml" />
+  </UserControl.Styles>
+  <ScrollViewer>
+    <StackPanel Orientation="Horizontal" x:Name="cantabTSwitches" Background="WhiteSmoke" Margin="10">
+      <HeaderedContentControl Header="Work Switch" Background="Gray">
+        <StackPanel Spacing="10" Margin="10">
+          <ToggleButton x:Name="chkSelectWorkSwitch" Width="238" Height="70" IsChecked="{Binding SelectWorkSwitch}">
+            Work Switch
+          </ToggleButton>
+          <ToggleButton x:Name="chkSetManualSections" Width="238" Height="70"  IsChecked="{Binding SetManualSections}">
+            Manual Sections
+          </ToggleButton>
+          <ToggleButton x:Name="chkSetAutoSections" Width="238" Height="70" IsChecked="{Binding SetManualSections}">
+            Auto Sections
+          </ToggleButton>
+          <ToggleButton x:Name="chkWorkSwActiveLow"  Width="238" Height="70" IsChecked="{Binding WorkSwActiveLow}">
+            <Image x:Name="chkWorkSwActiveLowImg" Source="avares://AAgOpenGPS/Assets/SwitchActiveClosed.png"/>
+          </ToggleButton>
+        </StackPanel>
+      </HeaderedContentControl>
+      <HeaderedContentControl Header="Steer Switch" Background="Gray" Margin="10 0">
+        <StackPanel Spacing="10" Margin="10">
+          <ToggleButton x:Name="chkSelectSteerSwitch" Width="238" Height="70" IsChecked="{Binding SelectSteerSwitch}">
+            Steer Switch
+          </ToggleButton>
+          <ToggleButton x:Name="chkSetManualSectionsSteer" Width="238" Height="70" IsChecked="{Binding SetManualSectionsSteer}">
+            Manual Sections
+          </ToggleButton>
+          <ToggleButton x:Name="chkSetAutoSectionsSteer" Width="238" Height="70" IsChecked="{Binding SetAutoSectionsSteer}">
+            Auto Sections
+          </ToggleButton>
+        </StackPanel>
+      </HeaderedContentControl>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

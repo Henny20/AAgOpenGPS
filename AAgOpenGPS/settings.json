@@ -1,0 +1,963 @@
+{
+  "Settings": {
+    "Setting": [{
+      "Name": "setDisplay_camPitch",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": -63
+      }
+    }, {
+      "Name": "setWindow_Location",
+      "Type": "Avalonia.PixelPoint",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "30, 30"
+      }
+    }, {
+      "Name": "setWindow_Size",
+      "Type": "System.Drawing.Size",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "1005, 730"
+      }
+    }, {
+      "Name": "setWindow_Width",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1005
+      }
+    }, {
+      "Name": "setWindow_Height",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 730
+      }
+    }, {
+      "Name": "setWindow_Maximized",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setWindow_Minimized",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_triangleResolution",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1
+      }
+    }, {
+      "Name": "setMenu_isMetric",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setMenu_isGridOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setMenu_isLightbarOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setF_CurrentDir",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)"
+      }
+    }, {
+      "Name": "setF_isWorkSwitchEnabled",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setIMU_pitchZeroX16",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setIMU_rollZero",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setF_minFixStep",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1
+      }
+    }, {
+      "Name": "setAS_lowSteerPWM",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 30
+      }
+    }, {
+      "Name": "setAS_wasOffset",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 3
+      }
+    }, {
+      "Name": "setF_UserTotalArea",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setAS_minSteerPWM",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 25
+      }
+    }, {
+      "Name": "setF_boundaryTriggerDistance",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1
+      }
+    }, {
+      "Name": "setAS_highSteerPWM",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 120
+      }
+    }, {
+      "Name": "setMenu_isSideGuideLines",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_countsPerDegree",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 101
+      }
+    }, {
+      "Name": "setMenu_isPureOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setMenu_isSimulatorOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setMenu_isSkyOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setF_culture",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "en"
+      }
+    }, {
+      "Name": "setF_workingDirectory",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "Default"
+      }
+    }, {
+      "Name": "setDisplay_lightbarCmPerPixel",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 4
+      }
+    }, {
+      "Name": "setGPS_fixFromWhichSentence",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "GGA"
+      }
+    }, {
+      "Name": "setGPS_headingFromWhichSource",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "Fix"
+      }
+    }, {
+      "Name": "setGPS_SimLatitude",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 53.4360564
+      }
+    }, {
+      "Name": "setGPS_SimLongitude",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": -111.160047
+      }
+    }, {
+      "Name": "setAS_snapDistance",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 20
+      }
+    }, {
+      "Name": "setF_isWorkSwitchManualSections",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_isAutoSteerAutoOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_lineWidth",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 2
+      }
+    }, {
+      "Name": "setDisplay_panelSimLocation",
+      "Type": "System.Drawing.Point",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "97, 600"
+      }
+    }, {
+      "Name": "setTram_tramWidth",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 24
+      }
+    }, {
+      "Name": "setTram_snapAdj",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1
+      }
+    }, {
+      "Name": "setTram_passes",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setTram_offset",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setMenu_isOGLZoomOn",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setMenu_isCompassOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setMenu_isSpeedoOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_colorDayFrame",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "210, 210, 230"
+      }
+    }, {
+      "Name": "setDisplay_colorNightFrame",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "50, 50, 65"
+      }
+    }, {
+      "Name": "setDisplay_colorSectionsDay",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "27, 151, 160"
+      }
+    }, {
+      "Name": "setDisplay_colorFieldDay",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "130, 130, 150"
+      }
+    }, {
+      "Name": "setDisplay_isDayMode",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setDisplay_colorSectionsNight",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "27, 100, 100"
+      }
+    }, {
+      "Name": "setDisplay_colorFieldNight",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "60, 60, 60"
+      }
+    }, {
+      "Name": "setDisplay_isAutoDayNight",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_customColors",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "-62208,-12299010,-16190712,-1505559,-3621034,-16712458,-7330570,-1546731,-24406,-3289866,-2756674,-538377,-134768,-4457734,-1848839,-530985"
+      }
+    }, {
+      "Name": "setDisplay_isTermsAccepted",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setGPS_isRTK",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_isStartFullScreen",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_isKeyboardOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setIMU_fusionWeight",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0.06
+      }
+    }, {
+      "Name": "setIMU_rollFilter",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0.5
+      }
+    }, {
+      "Name": "setAS_uTurnSmoothing",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 14
+      }
+    }, {
+      "Name": "setIMU_invertRoll",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_ackerman",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 100
+      }
+    }, {
+      "Name": "setF_isWorkSwitchActiveLow",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setAS_Kp",
+      "Type": "System.Byte",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 50
+      }
+    }, {
+      "Name": "setSound_isUturnOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setSound_isHydLiftOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setDisplay_colorTextNight",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "230, 230, 230"
+      }
+    }, {
+      "Name": "setDisplay_colorTextDay",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "10, 10, 20"
+      }
+    }, {
+      "Name": "setTool_isTramOuter",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setTram_isTramOnBackBuffer",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setDisplay_camZoom",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 9
+      }
+    }, {
+      "Name": "setDisplay_colorVehicle",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "White"
+      }
+    }, {
+      "Name": "setDisplay_vehicleOpacity",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 100
+      }
+    }, {
+      "Name": "setDisplay_isVehicleImage",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setIMU_isHeadingCorrectionFromAutoSteer",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_isTextureOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setAB_lineLength",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 1600
+      }
+    }, {
+      "Name": "UpdateSettings",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "SetGPS_udpWatchMsec",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 70
+      }
+    }, {
+      "Name": "setF_isSteerWorkSwitchManualSections",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_isConstantContourOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_guidanceLookAheadTime",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 2
+      }
+    }, {
+      "Name": "setFeatures",
+      "Type": "AAgOpenGPS.CFeatureSettings",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)"
+      }
+    }, {
+      "Name": "setIMU_isDualAsIMU",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setAS_sideHillComp",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setIMU_isReverseOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setGPS_forwardComp",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0.15
+      }
+    }, {
+      "Name": "setGPS_reverseComp",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0.3
+      }
+    }, {
+      "Name": "setGPS_ageAlarm",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 20
+      }
+    }, {
+      "Name": "setGPS_isRTK_KillAutoSteer",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setColor_sec01",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "249, 22, 10"
+      }
+    }, {
+      "Name": "setColor_sec02",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "68, 84, 254"
+      }
+    }, {
+      "Name": "setColor_sec03",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "8, 243, 8"
+      }
+    }, {
+      "Name": "setColor_sec04",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "233, 6, 233"
+      }
+    }, {
+      "Name": "setColor_sec05",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "200, 191, 86"
+      }
+    }, {
+      "Name": "setColor_sec06",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "0, 252, 246"
+      }
+    }, {
+      "Name": "setColor_sec07",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "144, 36, 246"
+      }
+    }, {
+      "Name": "setColor_sec08",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "232, 102, 21"
+      }
+    }, {
+      "Name": "setColor_sec09",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "255, 160, 170"
+      }
+    }, {
+      "Name": "setColor_sec10",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "205, 204, 246"
+      }
+    }, {
+      "Name": "setColor_sec11",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "213, 239, 190"
+      }
+    }, {
+      "Name": "setColor_sec12",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "247, 200, 247"
+      }
+    }, {
+      "Name": "setColor_sec13",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "253, 241, 144"
+      }
+    }, {
+      "Name": "setColor_sec14",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "187, 250, 250"
+      }
+    }, {
+      "Name": "setColor_sec15",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "227, 201, 249"
+      }
+    }, {
+      "Name": "setColor_sec16",
+      "Type": "System.Drawing.Color",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "247, 229, 215"
+      }
+    }, {
+      "Name": "setColor_isMultiColorSections",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setDisplay_customSectionColors",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "-62208,-12299010,-16190712,-1505559,-3621034,-16712458,-7330570,-1546731,-24406,-3289866,-2756674,-538377,-134768,-4457734,-1848839,-530985"
+      }
+    }, {
+      "Name": "setBrand_TBrand",
+      "Type": "AAgOpenGPS.TBrand",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "AGOpenGPS"
+      }
+    }, {
+      "Name": "setBrand_HBrand",
+      "Type": "AAgOpenGPS.HBrand",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "AGOpenGPS"
+      }
+    }, {
+      "Name": "setBrand_WDBrand",
+      "Type": "AAgOpenGPS.WDBrand",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "AGOpenGPS"
+      }
+    }, {
+      "Name": "setHeadland_isSectionControlled",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setSound_isAutoSteerOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": true
+      }
+    }, {
+      "Name": "setRelay_pinConfig",
+      "Type": "System.String",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": "1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+      }
+    }, {
+      "Name": "setDisplay_camSmooth",
+      "Type": "System.Int32",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 50
+      }
+    }, {
+      "Name": "setGPS_dualHeadingOffset",
+      "Type": "System.Double",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": 0
+      }
+    }, {
+      "Name": "setF_isSteerWorkSwitchEnabled",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }, {
+      "Name": "setF_isRemoteWorkSystemOn",
+      "Type": "System.Boolean",
+      "Scope": "User",
+      "Value": {
+        "Profile": "(Default)",
+        "$t": false
+      }
+    }]
+  }
+}

@@ -1,0 +1,322 @@
+using Microsoft.Data.Sqlite;
+using System;
+using System.IO;
+
+namespace AAgOpenGPS;
+
+public static class DataAccess
+{
+
+    public static void InitializeDatabase()
+    {
+        //Console.Beep(); not on Android
+        var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "file.db");
+        //File.Delete(dbpath);
+        using (var db = new SqliteConnection($"Filename={dbpath}"))
+        {
+            db.Open();
+            string tableCommand =
+                 @"CREATE TABLE IF NOT EXISTS Field (
+					Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+					Name VARCHAR NOT NULL,
+					Area REAL NOT NULL
+					--Distance REAL NOT NULL
+				);
+				
+				CREATE TABLE IF NOT EXISTS Boundary (
+					Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					BoundaryId INTEGER,
+					FOREIGN KEY (BoundaryId) REFERENCES field(Id) 
+				);
+				
+				CREATE TABLE IF NOT EXISTS Vehicle (
+				    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					Type INTEGER NOT NULL,
+					Name VARCHAR(20) NOT NULL,
+					--Color_R INTEGER NOT NULL,
+					--Color_G INTEGER NOT NULL,
+					--Color_B INTEGER NOT NULL,
+					--Opacity REAL NOT NULL,
+					AntennaHeight REAL NOT NULL,
+					AntennaPivot REAL NOT NULL,
+					AntennaOff--set REAL NOT NULL,
+					Wheelbase REAL NOT NULL,
+					TrackWidth REAL NOT NULL
+				);
+				
+				CREATE TABLE IF NOT EXISTS Setting (
+				    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					Grid INTEGER NOT NULL
+				);
+				
+				--ALTER TABLE Vehicle ADD COLUMN Name VARCHAR(20) NOT NULL;
+				
+			    --INSERT INTO Vehicle VALUES (1, 0, 'Default Vehicle', 3, 0.1, 0, 2.8, 1.9);
+				--INSERT INTO Vehicle VALUES (2, 0, 'John Deere M5', 3, 0.1, 0, 2.8, 1.9);
+				
+				CREATE TABLE IF NOT EXISTS Tractor (
+					Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					Brand TEXT NOT NULL CHECK(Brand IN ('AGOpenGPS', 'Case', 'Claas', 'Deutz', 'Fendt', 'JohnDeere', 'Kubota', 'Massey', 'NewHolland', 'Same', 'Steyr', 'Ursus', 'Valtra', 'JCB'))
+				);
+
+				CREATE TABLE IF NOT EXISTS Harvester (
+					Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					Brand TEXT NOT NULL CHECK(Brand IN ('AgOpenGPS', 'Case', 'Claas', 'JohnDeere', 'NewHolland'))
+				);
+
+				CREATE TABLE IF NOT EXISTS Articulated (
+					Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					Brand TEXT NOT NULL CHECK(Brand IN ('AgOpenGPS', 'Case', 'Challenger', 'JohnDeere', 'NewHolland', 'Holder'))
+				);
+				
+				--CREATE TABLE Setting (
+					Id INTEGER PRIMARY KEY AUTOINCREMENT,
+					--setWindow_LocationX INTEGER,
+					--setWindow_LocationY INTEGER,
+					--setWindow_SizeWidth INTEGER,
+					--setWindow_SizeHeight INTEGER,
+					--setWindow_Maximized INTEGER,
+					--setWindow_Minimized INTEGER,
+					--setMenu_isMetric INTEGER,
+					--setMenu_isGridOn INTEGER,
+					--setMenu_isLightbarOn INTEGER,
+					--setF_CurrentDir NVARCHAR(255),
+					--setF_isWorkSwitchEnabled INTEGER,
+					--setIMU_rollZero FLOAT,
+					--setF_minHeadingStepDistance FLOAT,
+					--setAS_lowSteerPWM INTEGER,
+					--setAS_wasOffset INTEGER,
+					--setF_UserTotalArea FLOAT,
+					--setAS_minSteerPWM INTEGER,
+					--setAS_highSteerPWM INTEGER,
+					--setMenu_isSideGuideLines INTEGER,
+					--setAS_countsPerDegree INTEGER,
+					--setMenu_isPureOn INTEGER,
+					--setMenu_isSimulatorOn INTEGER,
+					--setDisplay_lightbarCmPerPixel INTEGER,
+					--setGPS_headingFromWhichSource NVARCHAR(255),
+					--setGPS_SimLatitude FLOAT,
+					--setGPS_SimLongitude FLOAT,
+					--setAS_snapDistance FLOAT,
+					--setF_isWorkSwitchManualSections INTEGER,
+					--setAS_isAutoSteerAutoOn INTEGER,
+					--setDisplay_lineWidth INTEGER,
+					--setTram_tramWidth FLOAT,
+					--setTram_passes INTEGER,
+					--setMenu_isSpeedoOn INTEGER,
+					--setDisplay_colorDayFrame NVARCHAR(255),
+					--setDisplay_colorNightFrame NVARCHAR(255),
+					--setDisplay_colorSectionsDay NVARCHAR(255),
+					--setDisplay_colorFieldDay NVARCHAR(255),
+					--setDisplay_isDayMode INTEGER,
+					--setDisplay_colorFieldNight NVARCHAR(255),
+					--setDisplay_customColors NVARCHAR(MAX),
+					--setDisplay_isTermsAccepted INTEGER,
+					--setGPS_isRTK INTEGER,
+					--setDisplay_isStartFullScreen INTEGER,
+					--setDisplay_isKeyboardOn INTEGER,
+					--setIMU_rollFilter FLOAT,
+					--setAS_uTurnSmoothing INTEGER,
+					--setIMU_invertRoll INTEGER,
+					--setAS_ackerman INTEGER,
+					--setF_isWorkSwitchActiveLow INTEGER,
+					--setAS_Kp INTEGER,
+					--setSound_isUturnOn INTEGER,
+					--setSound_isHydLiftOn INTEGER,
+					--setDisplay_colorTextNight NVARCHAR(255),
+					--setDisplay_colorTextDay NVARCHAR(255),
+					--setDisplay_camZoom FLOAT,
+					--setDisplay_colorVehicle NVARCHAR(255),
+					setDisplay_vehicleOpacity INTEGER,
+					setDisplay_isVehicleImage INTEGER,
+					setDisplay_isTextureOn INTEGER,
+					SetGPS_udpWatchMsec INTEGER,
+					setF_isSteerWorkSwitchManualSections INTEGER,
+					setAS_isConstantContourOn INTEGER,
+					setAS_guidanceLookAheadTime REAL,
+					setIMU_isDualAsIMU INTEGER,
+					setAS_sideHillComp REAL,
+					setIMU_isReverseOn INTEGER,
+					setGPS_forwardComp REAL,
+					setGPS_reverseComp REAL,
+					setGPS_ageAlarm INTEGER,
+					setGPS_isRTK_KillAutoSteer INTEGER,
+					setColor_sec01 NVARCHAR(50),
+					setColor_sec02 NVARCHAR(50),
+					setColor_sec03 NVARCHAR(50),
+					setColor_sec04 NVARCHAR(50),
+					setColor_sec05 NVARCHAR(50),
+					setColor_sec06 NVARCHAR(50),
+					setColor_sec07 NVARCHAR(50),
+					setColor_sec08 NVARCHAR(50),
+					setColor_sec09 NVARCHAR(50),
+					setColor_sec10 NVARCHAR(50),
+					setColor_sec11 NVARCHAR(50),
+					setColor_sec12 NVARCHAR(50),
+					setColor_sec13 NVARCHAR(50),
+					setColor_sec14 NVARCHAR(50),
+					setColor_sec15 NVARCHAR(50),
+					setColor_sec16 NVARCHAR(50),
+					setColor_isMultiColorSections INTEGER,
+					setDisplay_customSectionColors TEXT,
+					setBrand_TBrand NVARCHAR(50),
+					setHeadland_isSectionControlled BOOLEAN,
+					setSound_isAutoSteerOn BOOLEAN,
+					setRelay_pinConfig TEXT,
+					setDisplay_camSmooth INTEGER,
+					setGPS_dualHeadingOffset REAL,
+					setF_isSteerWorkSwitchEnabled BOOLEAN,
+					setF_isRemoteWorkSystemOn BOOLEAN,
+					setDisplay_isAutoStartAgIO BOOLEAN,
+					setAS_ModeXTE REAL,
+					setAS_ModeTime INTEGER,
+					setVehicle_toolWidth REAL,
+					setVehicle_toolOverlap REAL,
+					setTool_toolTrailingHitchLength REAL,
+					setVehicle_numSections INTEGER,
+					setSection_position1 REAL,
+					setSection_position2 REAL,
+					setSection_position3 REAL,
+					setSection_position4 REAL,
+					setSection_position5 REAL,
+					setSection_position6 REAL,
+					setSection_position7 REAL,
+					setSection_position8 REAL,
+					setSection_position9 REAL,
+					setSection_position10 REAL,
+					setSection_position11 REAL,
+					setSection_position12 REAL,
+					setSection_position13 REAL,
+					setSection_position14 REAL,
+					setSection_position15 REAL,
+					setSection_position16 REAL,
+					setSection_position17 REAL,
+					purePursuitIntegralGainAB REAL,
+					setVehicle_antennaHeight REAL,
+					setVehicle_toolLookAheadOn REAL,
+					setTool_isToolTrailing BOOLEAN,
+					setVehicle_toolOffset REAL,
+					setTool_isToolRearFixed BOOLEAN,
+					setVehicle_antennaPivot REAL,
+					setVehicle_wheelbase REAL,
+					setVehicle_hitchLength REAL,
+					setVehicle_toolLookAheadOff REAL,
+					setVehicle_slowSpeedCutoff REAL,
+					setVehicle_tankTrailingHitchLength REAL,
+					setVehicle_minCoverage INTEGER,
+					setVehicle_maxAngularVelocity REAL,
+					setVehicle_maxSteerAngle REAL,
+					set_youTurnExtensionLength INTEGER,
+					setVehicle_antennaOffset REAL,
+					set_youTurnDistanceFromBoundary REAL,
+					setVehicle_goalPointLookAheadMult REAL,
+					stanleyDistanceErrorGain REAL,
+					stanleyHeadingErrorGain REAL,
+					setVehicle_isStanleyUsed BOOLEAN,
+					setTool_isToolTBT BOOLEAN,
+					setVehicle_vehicleType INTEGER,
+					set_youSkipWidth INTEGER,
+					setArdSteer_setting1 INTEGER,
+					setArdSteer_setting0 INTEGER,
+					setVehicle_hydraulicLiftLookAhead REAL,
+					setArdSteer_maxPulseCounts INTEGER,
+					setArdMac_hydRaiseTime INTEGER,
+					setArdMac_hydLowerTime INTEGER,
+					setArdMac_isHydEnabled INTEGER,
+					setTool_defaultSectionWidth REAL,
+					setVehicle_toolOffDelay REAL,
+					setArdMac_setting0 INTEGER,
+					setTool_isToolFront BOOLEAN,
+					setVehicle_trackWidth REAL,
+					setArdMac_isDanfoss BOOLEAN,
+					stanleyIntegralGainAB REAL,
+					setSection_isFast BOOLEAN,
+					setArdMac_user1 INTEGER,
+					setArdMac_user2 INTEGER,
+					setArdMac_user3 INTEGER,
+					setArdMac_user4 INTEGER,
+					setVehicle_panicStopSpeed REAL,
+					setDisplay_brightness INTEGER,
+					set_youTurnRadius REAL,
+					setDisplay_brightnessSystem INTEGER,
+					setTool_isSectionsNotZones BOOLEAN,
+					setTool_numSectionsMulti INTEGER,
+					setTool_zones TEXT,
+					setTool_sectionWidthMulti REAL,
+					setDisplay_isBrightnessOn BOOLEAN,
+					setKey_hotkeys TEXT,
+					setVehicle_goalPointLookAheadHold REAL,
+					setTool_isSectionOffWhenOut BOOLEAN,
+					set_uTurnStyle INTEGER,
+					setGPS_minimumStepLimit REAL,
+					setAS_isSteerInReverse BOOLEAN,
+					setAS_functionSpeedLimit REAL,
+					setAS_maxSteerSpeed REAL,
+					setAS_minSteerSpeed REAL,
+					setBrand_HBrand INTEGER,
+					setBrand_WDBrand INTEGER,
+					setIMU_fusionWeight2 REAL,
+					setDisplay_isSvennArrowOn BOOLEAN,
+					setTool_isTramOuterInverted BOOLEAN,
+					setJobMenu_location TEXT,
+					setJobMenu_size TEXT,
+					setWindow_steerSettingsLocation TEXT,
+					setWindow_buildTracksLocation TEXT,
+					setTool_trailingToolToPivotLength REAL,
+					setWindow_formNudgeLocation TEXT,
+					setWindow_formNudgeSize TEXT,
+					setAS_snapDistanceRef REAL,
+					setDisplay_buttonOrder TEXT,
+					setDisplay_camPitch REAL,
+					setWindow_abDrawSize TEXT,
+					setWindow_HeadlineSize TEXT,
+					setWindow_HeadAcheSize TEXT,
+					setWindow_MapBndSize TEXT,
+					setWindow_BingMapSize TEXT,
+					setWindow_BingZoom INTEGER,
+					setWindow_QuickABLocation TEXT,
+					setDisplay_isLogElevation BOOLEAN,
+					setSound_isSectionsOn BOOLEAN,
+					setGPS_dualReverseDetectionDistance REAL,
+					setTool_isDisplayTramControl BOOLEAN,
+					setAS_uTurnCompensation REAL,
+					setWindow_gridSize TEXT,
+					setWindow_gridLocation TEXT,
+					setWindow_isKioskMode BOOLEAN,
+					setDisplay_isAutoOffAgIO BOOLEAN,
+					setWindow_isShutdownComputer BOOLEAN,
+					setDisplay_isShutdownWhenNoPower BOOLEAN,
+					setDisplay_isHardwareMessages BOOLEAN,
+					setGPS_jumpFixAlarmDistance INTEGER,
+					setAS_deadZoneDistance INTEGER,
+					setAS_deadZoneHeading INTEGER,
+					setMenu_isLightbarNotSteerBar BOOLEAN,
+					setTool_isDirectionMarkers BOOLEAN,
+					setAS_numGuideLines INTEGER,
+					setAS_deadZoneDelay INTEGER,
+					setTram_alpha REAL,
+					setVehicle_goalPointAcquireFactor REAL,
+					setBnd_isDrawPivot BOOLEAN,
+					setDisplay_isSectionLinesOn BOOLEAN,
+					setDisplay_isLineSmooth BOOLEAN,
+					setWindow_tramLineSize TEXT,
+					setAutoSwitchDualFixOn BOOLEAN,
+					setAutoSwitchDualFixSpeed REAL
+				);
+
+				
+				-- CREATE TABLE Boundary (
+				--	Id INTEGER PRIMARY KEY AUTOINCREMENT,
+				--	OuterBoundaryId INTEGER,
+				--	Area REAL,
+				--	FOREIGN KEY (OuterBoundaryId) REFERENCES BoundaryPolygon(Id)
+				--);
+			 ";
+
+            using (var command = new SqliteCommand(tableCommand, db))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+}

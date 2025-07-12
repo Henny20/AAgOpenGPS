@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.VConfigPage"
+             x:DataType="vm:MainViewModel">
+  <ScrollViewer>
+    <Border Padding="10" Margin="10"
+            BorderBrush="Gray"
+            BorderThickness="2">
+      <!--ListBox ItemsSource="{Binding Vehicles}"/-->
+      <ListBox ItemsSource="{Binding Vehicles}">
+		  <ListBox.ItemTemplate>
+		    <DataTemplate>
+		        <StackPanel Orientation="Horizontal">
+		            <TextBlock Text="{Binding Id}" Margin="0,0,10,0"/>
+		            <TextBlock Text="{Binding Name}"/>
+		        </StackPanel>
+		    </DataTemplate>
+		 </ListBox.ItemTemplate>
+       </ListBox>
+    </Border>
+  </ScrollViewer>
+</UserControl>

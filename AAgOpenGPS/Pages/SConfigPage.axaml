@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AAgOpenGPS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AAgOpenGPS.Pages.SConfigPage"
+             x:DataType="vm:MainViewModel">
+  <ScrollViewer>
+    <StackPanel x:Name="cantabSteer" Width="400" Margin="10">
+      <StackPanel Orientation="Horizontal" Spacing="10">
+        <ProgressBar x:Name="pbarLeft" Height="20" Width="100" Value="100" Minimum="0" Maximum="100" />
+        <ProgressBar x:Name="pbarRight" Height="20" Width="100" Value="20" Minimum="0" Maximum="100" />
+      </StackPanel>
+      <Button x:Name="btnZeroWAS" Margin="10" Height="50" Width="100" Command="{ Binding ZeroWASCommand }" HorizontalAlignment="Center" >
+        <Image Source="avares://AAgOpenGPS/Assets/SteerZero.png"/>
+      </Button>
+      <TextBlock x:Name="label10"  HorizontalAlignment="Center">
+        WAS Zero
+      </TextBlock>
+      <Panel>
+        <TextBlock x:Name="lblSteerAngleSensorZero" Text="-55.88" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Slider x:Name="hsbarWasOffset" HorizontalAlignment="Center"
+                Value="0"
+                Minimum="0"
+                Maximum="100"
+                Width="300"/>
+      </Panel>
+      <TextBlock x:Name="label7" HorizontalAlignment="Center">
+        Counts per Degree
+      </TextBlock>
+      <Panel>
+        <TextBlock x:Name="lblCountsPerDegree" Text="888" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Slider x:Name="hsbarCountsPerDegree" HorizontalAlignment="Center"
+                Value="0"
+                Minimum="0"
+                Maximum="100"
+                Width="300"/>
+      </Panel>
+      <TextBlock x:Name="label17" HorizontalAlignment="Center">
+        Ackermann
+      </TextBlock>
+      <Panel>
+        <TextBlock x:Name="lblAckerman" Text="888" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Slider x:Name="hsbarAckerman" HorizontalAlignment="Center"
+                Value="0"
+                Minimum="0"
+                Maximum="100"
+                Width="300"/>
+      </Panel>
+      <TextBlock x:Name="label23" HorizontalAlignment="Center">
+        Max Steer Angle
+      </TextBlock>
+      <Panel>
+        <TextBlock x:Name="lblActualSteerAngleUpper" Text="255" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Slider x:Name="hsbarMaxSteerAngle" HorizontalAlignment="Center"
+                Value="0"
+                Minimum="0"
+                Maximum="100"
+                Width="300"/>
+      </Panel>
+      <TextBlock x:Name="lblMaxSteerAngle" >
+        888
+      </TextBlock>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

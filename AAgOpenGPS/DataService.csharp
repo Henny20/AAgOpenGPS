@@ -1,0 +1,65 @@
+using System;
+using System.Text;
+using System.Data;
+using Microsoft.Data.Sqlite;
+using Dapper;
+
+namespace AAgOpenGPS;
+
+class DataService
+{
+    private SqliteConnection connection;
+
+    public DataService()
+    {
+        connection = new SqliteConnection("Data Source=file.db");
+    }
+
+    public void CreateTable()
+    {
+        using (connection) ;
+        {
+            connection.Open();
+            string sql = @"CREATE TABLE vehicle (
+					vehicleid INTEGER PRIMARY KEY,
+					name TEXT NOT NULL,
+					);";
+            connection.Execute(sql);
+        }
+    }
+
+    public DataTable selectQuery(string query)
+    {
+        SqliteCommand cmd = (SqliteCommand)SqliteFactory.Instance.CreateCommand();
+		cmd.CommandText = query;
+		cmd.Connection = connection;
+
+		DataTable dt;
+
+		using (SqliteDataReader dr = cmd.ExecuteReader())
+		{
+			 do
+			 {
+				        dt = new DataTable();
+				        dt.BeginLoadData();
+				        dt.Load(dr);
+				        dt.EndLoadData();
+
+			 } while (!dr.IsClosed && dr.NextResult());
+		}
+		return dt;
+    }
+}
+
+/***
+public class Vehicle
+{
+    public int VehicleID { get; set; }
+    public string Name { get; set; }
+}
+
+CREATE TABLE Vehicle (
+    VehicleID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT
+);
+****/
